@@ -5,8 +5,8 @@ import (
 
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
+	gormzap "github.com/hysios/gorm-zap"
 	"github.com/jinzhu/gorm"
-	gormzap "github.com/wantedly/gorm-zap"
 )
 
 func LogMiddleware() gin.HandlerFunc {

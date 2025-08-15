@@ -5,8 +5,6 @@ import (
 
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
-	gormzap "github.com/hysios/gorm-zap"
-	"github.com/jinzhu/gorm"
 )
 
 func LogMiddleware() gin.HandlerFunc {
@@ -16,8 +14,4 @@ func LogMiddleware() gin.HandlerFunc {
 func SetupGin(r *gin.Engine) {
 	r.Use(LogMiddleware())
 	r.Use(ginzap.RecoveryWithZap(logger.Logger, true))
-}
-
-func SetupGorm(db *gorm.DB) {
-	db.SetLogger(gormzap.New(logger.Logger))
 }
